@@ -41,8 +41,12 @@ jobs:
           # Push to master branch and capture the output
           push_output=$(git push $PWS_URL master:master 2>&1)
           if [[ $? -ne 0 ]]; then
-            echo "Push failed with output: $push_output"
-            echo "Error: Unable to push changes. Please check the error message above and resolve any conflicts manually."
-            exit 1
+              echo "Push failed with output: $push_output"
+              if [[ $push_output == *"Everything up-to-date"* ]]; then
+                  echo "Nothing to push, everything is up to date."
+              else
+                  echo "Error: Unable to push changes. Please check the error message above and resolve any conflicts manually."
+                  exit 1
+              fi
           fi
           echo "Push successful with output: $push_output"
