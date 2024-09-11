@@ -10,7 +10,8 @@ def show_main(request):
         context = {
                 'npm' : '2306256362',
                 'name': 'Isaac Jesse Boentoro',
-                'class': 'PBD KKI'
+                'class': 'PBD KKI',
+                'mood_entries': mood_entries
         }
         return render(request, "main.html", context)
     
