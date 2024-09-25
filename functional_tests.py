@@ -20,8 +20,13 @@ class ExampleFunctionalTest(unittest.TestCase):
         self.browser.get(deployment_url)
         username_input = self.browser.find_element(by=By.NAME, value="username")
         password_input = self.browser.find_element(by=By.NAME, value="password")
+<<<<<<< HEAD
         username_input.send_keys("selenium")
         password_input.send_keys("*U;jXfv!98t]Awn")
+=======
+        username_input.send_keys("isaac.jesse")
+        password_input.send_keys("9a%=i#L=H29X?gr")
+>>>>>>> d9c4b1bcb9e367c5c5aadb2e7403642a7aebb2e9
         
         # Wait for the submit button to be present and click it using the provided XPath
         submit_button = WebDriverWait(self.browser, 10).until(
