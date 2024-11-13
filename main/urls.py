@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from main.views import (
         show_main,
         create_mood_entry,
@@ -29,4 +29,5 @@ urlpatterns = [
         path('edit-mood/<uuid:id>', edit_mood, name='edit_mood'),
         path('delete/<uuid:id>', delete_mood, name='delete_mood'),
         path('create-mood-entry-ajax', add_mood_entry_ajax, name='add_mood_entry_ajax'),
+        path('auth/', include('authentication.urls')),
 ]
