@@ -11,7 +11,8 @@ from main.views import (
         logout_user,
         edit_mood,
         delete_mood,
-        add_mood_entry_ajax
+        add_mood_entry_ajax,
+        create_mood_flutter,
 )
 
 app_name = 'main'
@@ -30,4 +31,5 @@ urlpatterns = [
         path('delete/<uuid:id>', delete_mood, name='delete_mood'),
         path('create-mood-entry-ajax', add_mood_entry_ajax, name='add_mood_entry_ajax'),
         path('auth/', include('authentication.urls')),
+        path('create-flutter/', create_mood_flutter, name='create_mood_flutter'),
 ]
